@@ -1,0 +1,7 @@
+<h1>¿Eliminar equipo?</h1>
+<p>{{ equipo.nombre }} - {{ equipo.entrenador }}</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'equipo_list' %}">Cancelar</a>

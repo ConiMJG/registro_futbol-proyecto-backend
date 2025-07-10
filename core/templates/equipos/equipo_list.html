@@ -1,0 +1,12 @@
+<h1>Lista de Equipos</h1>
+<a href="{% url 'equipo_create' %}">Añadir Equipo</a>
+<ul>
+  {% for equipo in equipos %}
+    <li>
+      <img src="{{ equipo.escudo.url }}" width="80" height="80" alt="{{ equipo.nombre }}">
+      {{ equipo.nombre }} ({{ equipo.pais }})
+      <a href="{% url 'equipo_update' equipo.pk %}">Editar</a>
+      <a href="{% url 'equipo_delete' equipo.pk %}">Eliminar</a>
+    </li>
+  {% endfor %}
+</ul>

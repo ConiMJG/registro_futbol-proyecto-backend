@@ -1,0 +1,12 @@
+<h1>Lista de Jugadores</h1>
+<a href="{% url 'jugador_create' %}">Añadir Jugador</a>
+<ul>
+  {% for jugador in jugadores %}
+    <li>
+      <img src="{{ jugador.foto.url }}" width="80" height="80" alt="{{ jugador.nombre }}">
+      {{ jugador.nombre }} - {{ jugador.equipo }}
+      <a href="{% url 'jugador_update' jugador.pk %}">Editar</a>
+      <a href="{% url 'jugador_delete' jugador.pk %}">Eliminar</a>
+    </li>
+  {% endfor %}
+</ul>
